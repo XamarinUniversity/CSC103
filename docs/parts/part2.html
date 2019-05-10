@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 2: Road Trip - Part 2</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: Object-Oriented Programming </header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+		<h2>Duration</h2>
+		<p>15 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+
+		<p>
+			Here you will complete the implementation of a <code>RoadTrip</code> class that you began in Part 1.
+			This part adds fields to the class which are used to calculate metrics for your journey.
+			The high-level goals for the exercise are listed below: 
+		</p>
+
+		<ul>
+         <li>Implement three fields to hold miles, hours elapsed and gallons used in our <code>RoadTrip</code> class. All of these fields are of type <code>double</code>.</li>
+         <li>Add code into the <code>Main</code> method to use the <code>RoadTrip</code> class and output the value of the fields.</li>
+		</ul>
+
+		<p>
+			Below is sample output from the finished application.
+		</p>
+		<img src="./res/images/Part2.Completed.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+
+		<!-- - - - - - - - - Supplied resources - - - - - - - - -->
+
+		<h2>Required assets</h2>
+		<p>
+			The provided <strong>Exercise 2</strong> folder contains resources that you will need in order to complete the lab:
+
+			<ul class="indent-medium">
+				<li>
+					The <strong>Part2.Start</strong> folder contains a starter solution you can use if you did not complete the previous	exercise, or if you would like to begin with a fresh project.
+				</li>
+
+				<li>
+					The <strong>Part2.Completed</strong> folder contains a completed version of the lab you can use to check your work.
+				</li>
+			</ul>
+		</p>
+		<p>
+			Please make sure you have this folder before you begin.
+		</p>
+
+		<div class="hintblock">
+			<strong>Tip:</strong> If you are doing this exercise live in a session, make sure to make good use
+			of the instructor, they are online to answer any questions you have!
+		</div>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+
+		<h1 id="steps">Steps</h1>
+
+		<p>
+			Below are the step-by-step instructions to implement the exercise.
+		</p>
+
+		<h2>Implement the <code>RoadTrip</code> fields</h2>
+		<p>
+			In this section, you will add data fields inside the <code>RoadTrip</code> class.
+		</p>
+
+		<ol>
+         <li>Open the <b>RoadTrip.cs</b> file in your IDE.</li>
+         <li>Make the <code>RoadTrip</code> class <code>public</code>, this is always a good idea if you plan to use the class in other places.</li>
+			<li>
+            Inside the <code>RoadTrip</code> class, add three fields to store information about your journey:
+            <code>Miles</code>, <code>HoursElapsed</code>, and <code>GallonsUsed</code>.
+            All the fields should be <code>public</code> so they can be accessed from other code such as <code>Main</code>.
+            All the fields should be of type <code>double</code> so they can store floating-point values. 
+         </li>
+		</ol>
+
+<p><a href="#" onclick="toggleCode(this,'addFields');return false;" class="uiitem">Show Code</a>
+            <div id="addFields" style="display:none;">
+<pre class="prettyprint">
+namespace Travel
+{
+   <span class="highlight">public</span> class RoadTrip
+   {
+      <span class="highlight">public double Miles;</span>
+      <span class="highlight">public double HoursElapsed;</span>
+      <span class="highlight">public double GallonsUsed;</span>
+   }
+}
+</pre>               
+        </div></p>      
+
+		<h2>Implement the <code>Main</code> program</h2>
+      <p>
+         This section asks you to write code to create objects and access their fields. 
+      </p>
+
+      <ol>
+         <li>
+            Open the file <strong>Program.cs</strong>. You will be adding code to the <code>Main</code> method inside <code>MainClass</code>.
+         </li>
+
+         <li>
+            Create two <code>RoadTrip</code> objects using the <code>new</code> operator (see below for a
+            sample showing the creation of one of the two objects). Name them <code>chores</code> and <code>vacation</code>.
+            You need these objects because they contain the fields you will use to store information about each trip.
+            Each <code>RoadTrip</code> object gets its own copy of all the fields.
+<pre class="prettyprint codeblock">
+RoadTrip chores = new RoadTrip();
+</pre>
+         </li>
+
+         <li>
+            Load values of your choice into each of the fields of the two <code>RoadTrip</code> objects.
+            Since you have 2 objects with 3 fields each, this will require 6 assignments. The code below
+            shows a sample for 1 of the 6 assignments you will need.
+<pre class="prettyprint codeblock">
+chores.Miles = 50.00;
+</pre>
+         </li>
+
+         <li>
+            Add <code>Console.WriteLine</code> calls to print all fields of the two objects.
+            This requires 6 calls to <code>Console.WriteLine</code>, but it is a useful exercise since it
+            shows you that each object has its own copy of all the fields. That is, the <code>chores</code>
+            object and the <code>vacation</code> object are independent, they each store their own data.
+            The code below shows a sample for 1 of the 6 <code>Console.WriteLine</code> statements you will need.
+<pre class="prettyprint codeblock">
+Console.WriteLine(chores.Miles);
+</pre>
+         </li>
+
+         <li>
+            Run the program to test your work.
+         </li>
+
+         <li>
+            [Optional] If you have time, try changing the <code>Miles</code> field from <code>public</code>
+            to <code>private</code>. Build your project and see what happens. You should get error messages
+            where the <code>Main</code> method attempts to access <code>Miles</code>. We will explore this
+            idea more in a future session; for now, please return the access level to <code>public</code>.
+         </li>
+      </ol>
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+
+		<h1>Summary</h1>
+      <p>
+		In this lab, you added to your <code>RoadTrip</code> class a few fields to store data values and then wrote some code to utilize that data.
+      </p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+   <footer>Copyright (C) 2018 Xamarin Inc., Microsoft.</footer>
+</body>
+</html>
